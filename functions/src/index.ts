@@ -181,7 +181,8 @@ export const webhookTrigger = functions
 
     const body = (typeof req.body === 'object' && req.body) || {};
     const skill = (body.skill as WorkflowTask['skill']) || 'llm_prompt';
-    const { skill: _s, ...input } = body;
+    const input = { ...body };
+    delete (input as Record<string, unknown>).skill;
 
     const taskId = await enqueueTask({
       ownerUid: hook.ownerUid,

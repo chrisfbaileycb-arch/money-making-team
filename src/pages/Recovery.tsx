@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
     import { toast } from 'react-toastify';
     import { 
       CheckCircle2, 
-      AlertCircle, 
       ArrowRight, 
       ArrowLeft, 
       Loader2, 
@@ -21,7 +20,6 @@ import { Link } from 'react-router-dom';
     const Recovery: React.FC = () => {
       const [currentStep, setCurrentStep] = useState<Step>('upload');
       const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
-      const [isProcessing, setIsProcessing] = useState(false);
 
       const handleFilesSelected = (files: File[]) => {
         setUploadedFiles(files);
@@ -36,12 +34,10 @@ import { Link } from 'react-router-dom';
       };
 
       const handleImport = () => {
-        setIsProcessing(true);
         setCurrentStep('processing');
         
         // Simulate processing
         setTimeout(() => {
-          setIsProcessing(false);
           setCurrentStep('success');
           toast.success("Content successfully attached to your account!");
         }, 3000);

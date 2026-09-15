@@ -5,7 +5,6 @@ import {
   Shield,
   Plus,
   Globe,
-  Server,
   CheckCircle2,
   ToggleLeft,
   ToggleRight,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
-import { Users, Plus, Trash2, Activity, Zap, Cpu } from 'lucide-react';
+import { Plus, Trash2, Activity, Zap, Cpu } from 'lucide-react';
 import Layout from '../components/Layout';
 import { useApp } from '../context/AppContext';
 

@@ -8,7 +8,6 @@ import {
   Database, 
   TrendingUp, 
   DollarSign, 
-  CheckCircle2, 
   AlertCircle, 
   Terminal, 
   Plus, 
@@ -16,7 +15,6 @@ import {
   Link2Off, 
   Settings, 
   RefreshCw, 
-  ArrowUpRight,
   Sparkles,
   Layers,
   Webhook,
@@ -26,10 +24,8 @@ import {
   Trash2,
   ToggleLeft,
   ToggleRight,
-  ExternalLink,
   Zap,
-  ShoppingBag,
-  Users
+  ShoppingBag
 } from 'lucide-react';
 import Layout from '../components/Layout';
 import { useApp, type MarketingProject, type IncomingWebhook } from '../context/AppContext';
@@ -146,10 +142,8 @@ const Workflows: React.FC = () => {
     incomingWebhooks,
     connectProject, 
     disconnectProject, 
-    addAffiliateSale, 
     addWorkflowLog, 
     clearWorkflowLogs,
-    requestAdSpend,
     addIncomingWebhook,
     deleteIncomingWebhook,
     toggleIncomingWebhookStatus,
@@ -1190,7 +1184,7 @@ const triggerWebhookWorkflow = async (webhook: IncomingWebhook, payload: string)
                         }
                         try {
                           JSON.parse(simPayload);
-                        } catch (e) {
+                        } catch {
                           toast.error('Invalid JSON payload.');
                           return;
                         }

@@ -21,7 +21,7 @@ const THIN_THRESHOLD = 1_200;   // fewer chars of real text than this → try th
 
 function htmlToText(html: string): { title: string; text: string } {
   const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? '').replace(/\s+/g, ' ').trim();
-  let t = html
+  const t = html
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ')

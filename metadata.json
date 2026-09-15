@@ -1,0 +1,6 @@
+{
+  "name": "AffiliateAgent",
+  "description": "Scale high-yield affiliate assets with autonomous agent intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

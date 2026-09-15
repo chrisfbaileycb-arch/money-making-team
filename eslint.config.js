@@ -6,7 +6,7 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'functions/lib']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -17,6 +17,7 @@ export default defineConfig([
     ],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
     languageOptions: {
       ecmaVersion: 2020,

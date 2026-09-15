@@ -1,16 +1,14 @@
 import React, { useState, useCallback } from 'react';
-    import { motion } from 'framer-motion';
-    import { Upload, FileText, X, CheckCircle2, Loader2 } from 'lucide-react';
-    import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
+import { Upload, FileText, X } from 'lucide-react';
 
-    interface UploadZoneProps {
-      onFilesSelected: (files: File[]) => void;
-    }
+interface UploadZoneProps {
+  onFilesSelected: (files: File[]) => void;
+}
 
-    const UploadZone: React.FC<UploadZoneProps> = ({ onFilesSelected }) => {
-      const [isDragging, setIsDragging] = useState(false);
-      const [files, setFiles] = useState<File[]>([]);
-      const [isUploading, setIsUploading] = useState(false);
+const UploadZone: React.FC<UploadZoneProps> = ({ onFilesSelected }) => {
+  const [isDragging, setIsDragging] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
 
       const handleDragOver = useCallback((e: React.DragEvent) => {
         e.preventDefault();
