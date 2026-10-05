@@ -89,8 +89,8 @@ const DEFAULT_HEADERS: SecurityHeaders = INITIAL_SECURITY_HEADERS;
 
 const DEMO_USER: User = {
   uid: 'owner-operator-uid',
-  email: 'chrisfbailey.CB@gmail.com',
-  displayName: 'Chris Bailey (Operator)',
+  email: '',
+  displayName: 'Operator',
   emailVerified: true,
   isAnonymous: false,
   metadata: {},

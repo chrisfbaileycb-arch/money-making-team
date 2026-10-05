@@ -71,7 +71,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="flex items-center gap-4">
             {user ? (
               <>
-                <span className="hidden sm:inline text-sm text-slate-600" title={`UID: ${user.uid}`}>{user.email}</span>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200/60">
+                  <div className="w-6 h-6 rounded-full bg-brand-500 text-white text-xs font-bold flex items-center justify-center">
+                    {(user.displayName || 'O').charAt(0).toUpperCase()}
+                  </div>
+                  <span className="hidden sm:inline text-xs font-semibold text-slate-700">
+                    {user.displayName || 'Operator'}
+                  </span>
+                </div>
                 <button type="button" onClick={signOutUser} className="p-2 text-slate-400 hover:text-slate-700 focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg" aria-label="Sign out">
                   <LogOut className="w-5 h-5" />
                 </button>
